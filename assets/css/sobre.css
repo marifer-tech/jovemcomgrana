@@ -1,0 +1,244 @@
+/* About Page Styles */
+.about-hero {
+    padding: 6rem 0 3rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.about-author {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.author-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.author-image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.author-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.author-image:hover img {
+    transform: scale(1.02);
+}
+
+.author-text {
+    flex: 1;
+}
+
+.author-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.author-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.mission-values {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+
+.mission-values .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 2rem;
+}
+
+.mission-card, .values-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.mission-card:hover, .values-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.mission-card i, .values-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.values-card ul {
+    text-align: left;
+    list-style-position: inside;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+
+.values-card li {
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    list-style-type: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.values-card li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.social-cta {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.social-cta h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.social-cta p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+.social-btn.tiktok {
+    background-color: #000000;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.social-btn.youtube {
+    background-color: #FF0000;
+}
+
+.social-btn:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 5rem 0 2rem;
+    }
+    
+    .author-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .author-image {
+        min-width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .social-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+/* Acessibilidade */
+.social-btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Efeito de onda no hero */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+
+.wave .shape-fill {
+    fill: #FFFFFF;
+}
